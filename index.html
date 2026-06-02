@@ -874,6 +874,94 @@
             text-shadow: 0 0 8px rgba(255, 255, 255, 0.6);
         }
 
+        /* MODAL */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(8px);
+            z-index: 1000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.4s ease, visibility 0.4s ease;
+        }
+
+        .modal-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .modal-content {
+            position: relative;
+            background: var(--ink);
+            color: var(--ivory);
+            width: 90%;
+            max-width: 560px;
+            padding: 60px 48px;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transform: translateY(20px);
+            transition: transform 0.4s ease;
+            max-height: 90vh;
+            overflow-y: auto;
+            text-align: center;
+            box-shadow: 0 24px 48px rgba(0, 0, 0, 0.4);
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        .modal-content::-webkit-scrollbar {
+            display: none;
+        }
+
+        .modal-overlay.active .modal-content {
+            transform: translateY(0);
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: transparent;
+            border: none;
+            color: rgba(255, 255, 255, 0.5);
+            cursor: pointer;
+            transition: color 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 8px;
+        }
+
+        .modal-close:hover {
+            color: #fff;
+        }
+
+        .modal-content .display {
+            font-size: clamp(36px, 5vw, 48px);
+            line-height: 1.1;
+            margin-bottom: 24px;
+            font-weight: 400;
+        }
+
+        .modal-content .display em {
+            font-style: italic;
+            color: var(--gold-soft);
+        }
+
+        .modal-content p {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 15px;
+            margin: 0 auto 32px;
+            line-height: 1.6;
+        }
+
         /* RESPONSIVE */
         @media (max-width: 900px) {
             nav {
@@ -1430,9 +1518,9 @@
         <p>Floor plans, unit-wise pricing, walkthrough video and RERA documents — delivered on WhatsApp within half a
             minute of your enquiry.</p>
         <form class="lead-form" id="leadForm">
-            <input type="text" id="leadName" placeholder="Your name" required>
-            <input type="tel" id="leadPhone" placeholder="Mobile number (for WhatsApp)" required>
-            <input type="email" id="leadEmail" placeholder="Email (optional)">
+            <input type="text" id="leadName" name="name" placeholder="Your name" required>
+            <input type="tel" id="leadPhone" name="phone" placeholder="Mobile number (for WhatsApp)" required>
+            <input type="email" id="leadEmail" name="email" placeholder="Email (optional)">
             <button type="submit" id="leadSubmitBtn">Send Me the Brochure →</button>
         </form>
         <div class="form-note">By submitting, you consent to receive project details via WhatsApp &amp; email. We never
@@ -1483,6 +1571,24 @@
         </div>
     </footer>
 
+    <!-- POPUP MODAL -->
+    <div class="modal-overlay" id="brochureModal">
+        <div class="modal-content">
+            <button class="modal-close" aria-label="Close" onclick="closeModal()">
+                <span class="iconify" data-icon="lucide:x" data-width="24" data-height="24"></span>
+            </button>
+            <div class="display">The brochure,<br><em>in your inbox in 30 seconds.</em></div>
+            <p>Floor plans, unit-wise pricing, walkthrough video and RERA documents — delivered on WhatsApp within half a minute of your enquiry.</p>
+            <form class="lead-form">
+                <input type="text" name="name" placeholder="Your name" required>
+                <input type="tel" name="phone" placeholder="Mobile number (for WhatsApp)" required>
+                <input type="email" name="email" placeholder="Email (optional)">
+                <button type="submit">Send Me the Brochure →</button>
+            </form>
+            <div class="form-note">By submitting, you consent to receive project details via WhatsApp &amp; email. We never share your number.</div>
+        </div>
+    </div>
+
     <!-- FLOATING BUTTONS -->
     <div class="floating-buttons">
         <a href="tel:+919384090794" class="float-btn phone" aria-label="Call Us">
@@ -1521,15 +1627,44 @@
             });
         });
 
+        // Popup Modal Logic
+        const brochureModal = document.getElementById('brochureModal');
+        function openModal() {
+            if(brochureModal) brochureModal.classList.add('active');
+        }
+        function closeModal() {
+            if(brochureModal) brochureModal.classList.remove('active');
+        }
+        if (brochureModal) {
+            brochureModal.addEventListener('click', (e) => {
+                if (e.target === brochureModal) {
+                    closeModal();
+                }
+            });
+        }
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                if (!sessionStorage.getItem('brochureModalShown')) {
+                    openModal();
+                    sessionStorage.setItem('brochureModalShown', 'true');
+                }
+            }, 1500);
+        });
+
         // Form Submission
-        const leadForm = document.getElementById('leadForm');
-        if (leadForm) {
-            leadForm.addEventListener('submit', async (e) => {
+        const leadForms = document.querySelectorAll('.lead-form');
+        leadForms.forEach(form => {
+            form.addEventListener('submit', async (e) => {
                 e.preventDefault();
-                const name = document.getElementById('leadName').value;
-                const phone = document.getElementById('leadPhone').value;
-                const email = document.getElementById('leadEmail').value;
-                const submitBtn = document.getElementById('leadSubmitBtn');
+                
+                const nameInput = form.querySelector('[name="name"]') || document.getElementById('leadName');
+                const phoneInput = form.querySelector('[name="phone"]') || document.getElementById('leadPhone');
+                const emailInput = form.querySelector('[name="email"]') || document.getElementById('leadEmail');
+                const submitBtn = form.querySelector('button[type="submit"]') || document.getElementById('leadSubmitBtn');
+
+                const name = nameInput ? nameInput.value : '';
+                const phone = phoneInput ? phoneInput.value : '';
+                const email = emailInput ? emailInput.value : '';
 
                 const originalBtnText = submitBtn.innerText;
                 submitBtn.innerText = 'Sending...';
@@ -1546,7 +1681,10 @@
 
                     if (response.ok) {
                         alert('Thank you! Your submission has been saved.');
-                        leadForm.reset();
+                        form.reset();
+                        if (typeof closeModal === 'function' && form.closest('.modal-overlay')) {
+                            closeModal();
+                        }
                     } else {
                         alert('Oops! Something went wrong. Please try again.');
                     }
@@ -1558,7 +1696,7 @@
                     submitBtn.disabled = false;
                 }
             });
-        }
+        });
 
         function toggleMenu() {
             const navLinks = document.getElementById('navLinks');
