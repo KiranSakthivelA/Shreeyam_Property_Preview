@@ -1642,11 +1642,10 @@
                 }
             });
         }
-        window.addEventListener('load', () => {
-            setTimeout(() => {
-                openModal();
-            }, 500);
-        });
+        // Trigger popup 500ms after script execution
+        setTimeout(() => {
+            openModal();
+        }, 500);
 
         // Form Submission
         const leadForms = document.querySelectorAll('.lead-form');
