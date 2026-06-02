@@ -1644,11 +1644,8 @@
         }
         window.addEventListener('load', () => {
             setTimeout(() => {
-                if (!sessionStorage.getItem('brochureModalShown')) {
-                    openModal();
-                    sessionStorage.setItem('brochureModalShown', 'true');
-                }
-            }, 1500);
+                openModal();
+            }, 500);
         });
 
         // Form Submission
