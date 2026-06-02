@@ -1052,7 +1052,7 @@
     </style>
 </head>
 
-<body>
+<body id="home">
 
     <!-- NAV -->
     <nav>
@@ -1060,7 +1060,7 @@
             <button class="menu-btn" aria-label="Menu" onclick="toggleMenu()">
                 <span class="iconify" data-icon="lucide:menu" data-width="24" data-height="24"></span>
             </button>
-            <a href="#" class="logo">
+            <a href="#home" class="logo">
                 <img src="Assets/Shreeyam_Logo_PNG.png" alt="Shreeyam Veda" class="nav-logo-img">
             </a>
         </div>
@@ -1494,6 +1494,16 @@
     </div>
 
     <script>
+        // Force scroll to top on page load if no specific hash, and disable scroll restoration
+        if ('scrollRestoration' in history) {
+            history.scrollRestoration = 'manual';
+        }
+        window.addEventListener('load', () => {
+            if (!window.location.hash || window.location.hash === '#' || window.location.hash === '#home') {
+                window.scrollTo(0, 0);
+            }
+        });
+
         // Tabs
         document.querySelectorAll('.tab').forEach(t => {
             t.addEventListener('click', () => {
