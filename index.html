@@ -1049,6 +1049,167 @@
             width: 16px;
             height: 16px;
         }
+
+        /* POPUP MODAL */
+        .popup-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(10, 10, 10, 0.72);
+            backdrop-filter: blur(6px);
+            -webkit-backdrop-filter: blur(6px);
+            z-index: 999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.4s ease;
+        }
+
+        .popup-overlay.active {
+            opacity: 1;
+            pointer-events: all;
+        }
+
+        .popup-modal {
+            background: var(--ink);
+            color: var(--ivory);
+            border-radius: 16px;
+            width: 100%;
+            max-width: 520px;
+            padding: 52px 48px 44px;
+            position: relative;
+            transform: translateY(24px) scale(0.97);
+            transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.4s ease;
+            opacity: 0;
+            box-shadow: 0 32px 80px rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.07);
+        }
+
+        .popup-overlay.active .popup-modal {
+            transform: translateY(0) scale(1);
+            opacity: 1;
+        }
+
+        .popup-close {
+            position: absolute;
+            top: 18px;
+            right: 18px;
+            width: 36px;
+            height: 36px;
+            background: rgba(255, 255, 255, 0.07);
+            border: none;
+            border-radius: 50%;
+            color: rgba(255, 255, 255, 0.6);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            line-height: 1;
+            transition: background 0.2s, color 0.2s;
+        }
+
+        .popup-close:hover {
+            background: rgba(255, 255, 255, 0.15);
+            color: var(--ivory);
+        }
+
+        .popup-eyebrow {
+            font-size: 10px;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            color: var(--gold-soft);
+            margin-bottom: 16px;
+        }
+
+        .popup-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(28px, 5vw, 38px);
+            font-weight: 400;
+            line-height: 1.15;
+            margin-bottom: 12px;
+        }
+
+        .popup-title em {
+            font-style: italic;
+            color: var(--gold-soft);
+        }
+
+        .popup-sub {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.6);
+            margin-bottom: 32px;
+            line-height: 1.65;
+        }
+
+        .popup-form {
+            display: grid;
+            gap: 14px;
+        }
+
+        .popup-form input {
+            padding: 16px 20px;
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            color: var(--ivory);
+            font-family: 'Inter', sans-serif;
+            font-size: 14px;
+            border-radius: 8px;
+            transition: border-color 0.3s, background 0.3s;
+        }
+
+        .popup-form input:focus {
+            outline: none;
+            border-color: var(--gold);
+            background: rgba(255, 255, 255, 0.09);
+        }
+
+        .popup-form input::placeholder {
+            color: rgba(255, 255, 255, 0.35);
+        }
+
+        .popup-form button {
+            padding: 18px;
+            background: var(--gold);
+            color: var(--ivory);
+            border: none;
+            font-family: 'Inter', sans-serif;
+            font-size: 11px;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: background 0.3s, transform 0.2s;
+            margin-top: 6px;
+        }
+
+        .popup-form button:hover {
+            background: var(--gold-soft);
+            transform: translateY(-1px);
+        }
+
+        .popup-note {
+            margin-top: 16px;
+            font-size: 11px;
+            color: rgba(255, 255, 255, 0.35);
+            text-align: center;
+            line-height: 1.6;
+        }
+
+        .popup-gold-line {
+            width: 40px;
+            height: 2px;
+            background: var(--gold);
+            margin-bottom: 24px;
+        }
+
+        @media (max-width: 600px) {
+            .popup-modal {
+                padding: 40px 24px 32px;
+            }
+        }
     </style>
 </head>
 
@@ -1493,6 +1654,24 @@
         </a>
     </div>
 
+    <!-- POPUP MODAL -->
+    <div class="popup-overlay" id="popupOverlay" role="dialog" aria-modal="true" aria-labelledby="popupTitle">
+        <div class="popup-modal">
+            <button class="popup-close" id="popupClose" aria-label="Close popup">&times;</button>
+            <div class="popup-eyebrow">Exclusive Preview</div>
+            <div class="popup-gold-line"></div>
+            <h2 class="popup-title" id="popupTitle">Get the brochure,<br><em>in 30 seconds.</em></h2>
+            <p class="popup-sub">Floor plans, unit-wise pricing, walkthrough video &amp; RERA documents — delivered on WhatsApp instantly.</p>
+            <form class="popup-form" id="popupForm">
+                <input type="text" id="popupName" placeholder="Your name" required>
+                <input type="tel" id="popupPhone" placeholder="Mobile number (for WhatsApp)" required>
+                <input type="email" id="popupEmail" placeholder="Email (optional)">
+                <button type="submit" id="popupSubmitBtn">Send Me the Brochure &rarr;</button>
+            </form>
+            <p class="popup-note">We never share your number. By submitting, you consent to receive project details via WhatsApp &amp; email.</p>
+        </div>
+    </div>
+
     <script>
         // Force scroll to top on page load if no specific hash, and disable scroll restoration
         if ('scrollRestoration' in history) {
@@ -1521,44 +1700,95 @@
             });
         });
 
-        // Form Submission
+        // ── Shared lead submission function ──
+        async function submitLead(name, phone, email, submitBtn, form) {
+            const originalBtnText = submitBtn.innerText;
+            submitBtn.innerText = 'Sending...';
+            submitBtn.disabled = true;
+
+            try {
+                const response = await fetch('api/leads.php', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ name, phone, email })
+                });
+
+                if (response.ok) {
+                    submitBtn.innerText = '✓ Sent! We\'ll WhatsApp you shortly.';
+                    form.reset();
+                    if (form.id === 'popupForm') {
+                        setTimeout(() => closePopup(), 2000);
+                    }
+                } else {
+                    alert('Oops! Something went wrong. Please try again.');
+                    submitBtn.innerText = originalBtnText;
+                }
+            } catch (error) {
+                console.error('Error submitting form:', error);
+                alert('Error connecting to the server.');
+                submitBtn.innerText = originalBtnText;
+            } finally {
+                submitBtn.disabled = false;
+            }
+        }
+
+        // ── Page form ──
         const leadForm = document.getElementById('leadForm');
         if (leadForm) {
-            leadForm.addEventListener('submit', async (e) => {
+            leadForm.addEventListener('submit', (e) => {
                 e.preventDefault();
-                const name = document.getElementById('leadName').value;
-                const phone = document.getElementById('leadPhone').value;
-                const email = document.getElementById('leadEmail').value;
-                const submitBtn = document.getElementById('leadSubmitBtn');
-
-                const originalBtnText = submitBtn.innerText;
-                submitBtn.innerText = 'Sending...';
-                submitBtn.disabled = true;
-
-                try {
-                    const response = await fetch('api/leads.php', {
-                        method: 'POST',
-                        headers: {
-                            'Content-Type': 'application/json'
-                        },
-                        body: JSON.stringify({ name, phone, email })
-                    });
-
-                    if (response.ok) {
-                        alert('Thank you! Your submission has been saved.');
-                        leadForm.reset();
-                    } else {
-                        alert('Oops! Something went wrong. Please try again.');
-                    }
-                } catch (error) {
-                    console.error('Error submitting form:', error);
-                    alert('Error connecting to the server.');
-                } finally {
-                    submitBtn.innerText = originalBtnText;
-                    submitBtn.disabled = false;
-                }
+                submitLead(
+                    document.getElementById('leadName').value,
+                    document.getElementById('leadPhone').value,
+                    document.getElementById('leadEmail').value,
+                    document.getElementById('leadSubmitBtn'),
+                    leadForm
+                );
             });
         }
+
+        // ── Popup form ──
+        const popupForm = document.getElementById('popupForm');
+        if (popupForm) {
+            popupForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                submitLead(
+                    document.getElementById('popupName').value,
+                    document.getElementById('popupPhone').value,
+                    document.getElementById('popupEmail').value,
+                    document.getElementById('popupSubmitBtn'),
+                    popupForm
+                );
+            });
+        }
+
+        // ── Popup open/close ──
+        function openPopup() {
+            document.getElementById('popupOverlay').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closePopup() {
+            document.getElementById('popupOverlay').classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        document.getElementById('popupClose').addEventListener('click', closePopup);
+
+        // Close when clicking outside the modal
+        document.getElementById('popupOverlay').addEventListener('click', (e) => {
+            if (e.target === document.getElementById('popupOverlay')) closePopup();
+        });
+
+        // Close on Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closePopup();
+        });
+
+        // ── Auto-show popup on page load (1.5s delay) ──
+        window.addEventListener('load', () => {
+            setTimeout(openPopup, 1500);
+        });
 
         function toggleMenu() {
             const navLinks = document.getElementById('navLinks');
