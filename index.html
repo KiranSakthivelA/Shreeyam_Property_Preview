@@ -1,0 +1,1560 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shreeyam Veda — 14 Exclusive Villas in Central Coimbatore</title>
+    <link rel="icon" type="image/png" href="Assets/Fav_Icon_Sheeyam.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+    <style>
+        :root {
+            --ivory: #f5f1ea;
+            --ivory-soft: #faf7f2;
+            --ink: #1a1a1a;
+            --ink-soft: #3a3a3a;
+            --muted: #6b6257;
+            --gold: #af1e26;
+            --gold-soft: #d9424a;
+            --line: #d8cfc1;
+            --forest: #2e4034;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--ivory);
+            color: var(--ink);
+            font-weight: 300;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .display {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 400;
+            letter-spacing: -0.01em;
+        }
+
+        /* NAV */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            padding: 20px 48px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(245, 241, 234, 0.85);
+            backdrop-filter: blur(12px);
+            z-index: 100;
+            border-bottom: 1px solid rgba(216, 207, 193, 0.4);
+        }
+
+        .logo {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 22px;
+            letter-spacing: 0.15em;
+            font-weight: 500;
+        }
+
+        .logo span {
+            color: var(--gold);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 36px;
+            font-size: 12px;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+        }
+
+        .nav-links a {
+            color: var(--ink-soft);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--gold);
+        }
+
+        .nav-cta {
+            background: var(--ink);
+            color: var(--ivory);
+            padding: 10px 22px;
+            font-size: 11px;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: background 0.3s;
+        }
+
+        .nav-cta:hover {
+            background: var(--gold);
+        }
+
+        .nav-logo-img {
+            height: 40px;
+            width: auto;
+            display: block;
+        }
+
+        .nav-left {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .nav-actions {
+            display: flex;
+            align-items: center;
+        }
+
+        .menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--ink);
+            cursor: pointer;
+            padding: 4px;
+        }
+
+        /* HERO */
+        .hero {
+            min-height: 100vh;
+            padding: 140px 48px 80px;
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 80px;
+            align-items: center;
+            position: relative;
+        }
+
+
+
+        .hero-eyebrow {
+            font-size: 11px;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 28px;
+        }
+
+        .hero h1 {
+            font-size: clamp(48px, 6.5vw, 88px);
+            line-height: 1.05;
+            font-weight: 400;
+            margin-bottom: 32px;
+        }
+
+        .hero h1 em {
+            font-style: italic;
+            color: var(--gold);
+        }
+
+        .hero-sub {
+            font-size: 17px;
+            color: var(--muted);
+            max-width: 480px;
+            margin-bottom: 44px;
+            line-height: 1.75;
+        }
+
+        .hero-facts {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            padding-top: 32px;
+            border-top: 1px solid var(--line);
+        }
+
+        .fact-num {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 42px;
+            color: var(--ink);
+            line-height: 1;
+        }
+
+        .fact-label {
+            font-size: 10px;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--muted);
+            margin-top: 8px;
+        }
+
+        .hero-visual {
+            height: 560px;
+            background: url('Assets/row house view .jpg') center/cover no-repeat;
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+
+        /* TRUST STRIP */
+        .trust-strip {
+            padding: 32px 48px;
+            background: var(--ivory-soft);
+            border-top: 1px solid var(--line);
+            border-bottom: 1px solid var(--line);
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .trust-item {
+            font-size: 11px;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--muted);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .trust-item::before {
+            content: '◆';
+            color: var(--gold);
+            font-size: 8px;
+        }
+
+        /* SECTION */
+        section {
+            padding: 120px 48px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-tag {
+            font-size: 11px;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .section-tag::before {
+            content: '';
+            width: 40px;
+            height: 1px;
+            background: var(--gold);
+        }
+
+        .section-title {
+            font-size: clamp(36px, 4.5vw, 58px);
+            line-height: 1.1;
+            font-weight: 400;
+            margin-bottom: 40px;
+            max-width: 720px;
+        }
+
+        /* WHY VEDA */
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 48px;
+            margin-top: 60px;
+        }
+
+        .why-card {
+            padding: 40px 0;
+            border-top: 1px solid var(--line);
+        }
+
+        .why-num {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 14px;
+            color: var(--gold);
+            letter-spacing: 0.2em;
+            margin-bottom: 24px;
+        }
+
+        .why-card h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 26px;
+            font-weight: 500;
+            margin-bottom: 16px;
+            line-height: 1.2;
+        }
+
+        .why-card p {
+            font-size: 15px;
+            color: var(--muted);
+            line-height: 1.75;
+        }
+
+        /* AUDIENCE TABS */
+        .audience {
+            background: var(--ink);
+            color: var(--ivory);
+            padding: 120px 48px;
+            margin: 0;
+            max-width: 100%;
+        }
+
+        .audience-inner {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .audience .section-tag {
+            color: var(--gold-soft);
+        }
+
+        .audience .section-title {
+            color: var(--ivory);
+        }
+
+        .tab-bar {
+            display: flex;
+            gap: 4px;
+            margin: 50px 0 50px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        .tab-bar::-webkit-scrollbar {
+            display: none;
+        }
+
+        .tab {
+            padding: 18px 32px;
+            background: none;
+            border: none;
+            color: rgba(255, 255, 255, 0.5);
+            font-family: 'Inter', sans-serif;
+            font-size: 12px;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            cursor: pointer;
+            border-bottom: 2px solid transparent;
+            transition: all 0.3s;
+            margin-bottom: -1px;
+        }
+
+        .tab.active {
+            color: var(--ivory);
+            border-bottom-color: var(--gold);
+        }
+
+        .tab:hover {
+            color: var(--ivory);
+        }
+
+        .tab-panel {
+            display: none;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: start;
+        }
+
+        .tab-panel.active {
+            display: grid;
+            animation: fadeIn 0.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .panel-head h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 42px;
+            font-weight: 400;
+            margin-bottom: 24px;
+            line-height: 1.15;
+        }
+
+        .panel-head p {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 16px;
+            line-height: 1.75;
+        }
+
+        .panel-benefits {
+            list-style: none;
+        }
+
+        .panel-benefits li {
+            padding: 20px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+        }
+
+        .benefit-marker {
+            font-family: 'Cormorant Garamond', serif;
+            color: var(--gold-soft);
+            font-size: 14px;
+            min-width: 30px;
+        }
+
+        .panel-benefits strong {
+            display: block;
+            margin-bottom: 6px;
+            font-weight: 500;
+        }
+
+        .panel-benefits span {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 14px;
+        }
+
+        /* RESIDENCE DETAILS */
+        .residence {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            margin-top: 60px;
+            align-items: center;
+        }
+
+        .residence-visual {
+            height: 580px;
+            background: url('Assets/Entrance 02.jpg') center/cover no-repeat;
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .spec-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .spec-table tr {
+            border-bottom: 1px solid var(--line);
+        }
+
+        .spec-table td {
+            padding: 20px 0;
+            font-size: 14px;
+        }
+
+        .spec-table td:first-child {
+            color: var(--muted);
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            font-size: 11px;
+        }
+
+        .spec-table td:last-child {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 22px;
+            text-align: right;
+            color: var(--ink);
+        }
+
+        /* AMENITIES */
+        .amenities-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 16px;
+            margin-top: 60px;
+        }
+
+        .amenity {
+            background: var(--ivory-soft);
+            padding: 56px 28px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border-radius: 12px;
+            border: 1px solid var(--line);
+        }
+
+        .amenity:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.04);
+            background: #ffffff;
+        }
+
+        .amenity-icon {
+            color: var(--gold);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 24px;
+            font-size: 52px;
+            line-height: 1;
+        }
+
+        .amenity-name {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 18px;
+            margin-bottom: 8px;
+        }
+
+        .amenity-desc {
+            font-size: 12px;
+            color: var(--muted);
+            letter-spacing: 0.05em;
+        }
+
+        /* LOCATION */
+        .location {
+            background: var(--ivory-soft);
+            padding: 120px 48px;
+            max-width: 100%;
+            margin: 0;
+        }
+
+        .location-inner {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .location-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 80px;
+            margin-top: 60px;
+        }
+
+        .map-placeholder {
+            height: 520px;
+            background: linear-gradient(135deg, #e8e0d2 0%, #c9b896 100%);
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+
+        .poi-list {
+            list-style: none;
+        }
+
+        .poi-list li {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            padding: 18px 0;
+            border-bottom: 1px solid var(--line);
+        }
+
+        .poi-list li:first-child {
+            border-top: 1px solid var(--line);
+        }
+
+        .poi-name {
+            font-size: 15px;
+        }
+
+        .poi-dist {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 18px;
+            color: var(--gold);
+            font-style: italic;
+        }
+
+        /* COMPARE */
+        .compare-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 60px;
+            background: var(--ivory);
+        }
+
+        .compare-table th,
+        .compare-table td {
+            padding: 24px 28px;
+            text-align: left;
+            border-bottom: 1px solid var(--line);
+            font-size: 14px;
+        }
+
+        .compare-table th {
+            background: var(--ink);
+            color: var(--ivory);
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 500;
+            font-size: 18px;
+            letter-spacing: 0.05em;
+            text-transform: none;
+        }
+
+        .compare-table td:first-child {
+            font-weight: 500;
+            color: var(--muted);
+            font-size: 11px;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+        }
+
+        .compare-table .us {
+            background: var(--ivory-soft);
+            font-weight: 500;
+        }
+
+        .compare-table .us td {
+            color: var(--ink);
+        }
+
+        /* FAQ */
+        .faq {
+            max-width: 900px;
+            margin: 60px auto 0;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid var(--line);
+        }
+
+        .faq-q {
+            padding: 28px 0;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 24px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 500;
+        }
+
+        .faq-q::after {
+            content: '+';
+            font-size: 28px;
+            color: var(--gold);
+            font-weight: 300;
+            transition: transform 0.3s;
+        }
+
+        .faq-item.open .faq-q::after {
+            transform: rotate(45deg);
+        }
+
+        .faq-a {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease, padding 0.4s ease;
+            color: var(--muted);
+            font-size: 15px;
+            line-height: 1.8;
+        }
+
+        .faq-item.open .faq-a {
+            max-height: 300px;
+            padding: 0 0 28px 0;
+        }
+
+        /* CTA BLOCK */
+        .final-cta {
+            background: var(--ink);
+            color: var(--ivory);
+            padding: 120px 48px;
+            text-align: center;
+            max-width: 100%;
+            margin: 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .final-cta::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 1px;
+            height: 60px;
+            background: var(--gold);
+        }
+
+        .final-cta .display {
+            font-size: clamp(48px, 6vw, 78px);
+            line-height: 1.1;
+            margin-bottom: 32px;
+            font-weight: 400;
+        }
+
+        .final-cta .display em {
+            font-style: italic;
+            color: var(--gold-soft);
+        }
+
+        .final-cta p {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 17px;
+            max-width: 560px;
+            margin: 0 auto 48px;
+        }
+
+        /* FORM */
+        .lead-form {
+            max-width: 560px;
+            margin: 0 auto;
+            display: grid;
+            gap: 16px;
+        }
+
+        .lead-form input {
+            padding: 18px 24px;
+            background: transparent;
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            color: var(--ivory);
+            font-family: 'Inter', sans-serif;
+            font-size: 15px;
+            border-radius: 6px;
+            transition: border-color 0.3s;
+        }
+
+        .lead-form input:focus {
+            outline: none;
+            border-color: var(--gold);
+        }
+
+        .lead-form input::placeholder {
+            color: rgba(255, 255, 255, 0.4);
+        }
+
+        .lead-form button {
+            padding: 20px;
+            background: var(--gold);
+            color: var(--ivory);
+            border: none;
+            font-family: 'Inter', sans-serif;
+            font-size: 12px;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            cursor: pointer;
+            border-radius: 6px;
+            transition: background 0.3s;
+            margin-top: 8px;
+        }
+
+        .lead-form button:hover {
+            background: var(--gold-soft);
+        }
+
+        .form-note {
+            margin-top: 20px;
+            font-size: 12px;
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        /* FLOATING BUTTONS */
+        .floating-buttons {
+            position: fixed;
+            bottom: 28px;
+            right: 28px;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            z-index: 90;
+        }
+
+        .float-btn {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+            transition: transform 0.3s;
+            text-decoration: none;
+        }
+
+        .float-btn:hover {
+            transform: translateY(-4px);
+        }
+
+        .float-btn.phone {
+            background: var(--ink);
+        }
+
+        .float-btn.whatsapp {
+            background: #25d366;
+        }
+
+        .float-btn svg {
+            width: 28px;
+            height: 28px;
+            fill: currentColor;
+        }
+
+        /* FOOTER */
+        footer {
+            background: #111111;
+            color: rgba(255, 255, 255, 0.5);
+            padding: 60px 48px 32px;
+            font-size: 12px;
+        }
+
+        .footer-inner {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 60px;
+            margin-bottom: 48px;
+        }
+
+        .footer-col h4 {
+            color: var(--gold-soft);
+            font-size: 11px;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            margin-bottom: 16px;
+        }
+
+        .footer-col a {
+            display: block;
+            color: rgba(255, 255, 255, 0.5);
+            text-decoration: none;
+            margin-bottom: 10px;
+            transition: color 0.3s ease, text-shadow 0.3s ease;
+        }
+
+        .footer-col a:hover {
+            color: #ffffff;
+            text-shadow: 0 0 8px rgba(255, 255, 255, 0.6);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 24px;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 16px;
+            font-size: 11px;
+        }
+
+        .footer-bottom-content {
+            display: flex;
+            gap: 24px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .footer-bottom a {
+            transition: color 0.3s ease, text-shadow 0.3s ease;
+        }
+
+        .footer-bottom a:hover {
+            color: #ffffff !important;
+            text-shadow: 0 0 8px rgba(255, 255, 255, 0.6);
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 900px) {
+            nav {
+                padding: 12px 16px;
+            }
+
+            .nav-logo-img {
+                height: 26px;
+            }
+
+            .nav-actions {
+                gap: 12px;
+            }
+
+            .nav-cta {
+                padding: 8px 12px;
+                font-size: 10px;
+                letter-spacing: 0.1em;
+                white-space: nowrap;
+            }
+
+            .menu-btn {
+                display: flex;
+                align-items: center;
+            }
+
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: rgba(245, 241, 234, 0.98);
+                flex-direction: column;
+                padding: 24px;
+                gap: 20px;
+                border-bottom: 1px solid rgba(216, 207, 193, 0.4);
+                box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .hero {
+                grid-template-columns: 1fr;
+                padding: 80px 20px 60px;
+                gap: 40px;
+            }
+
+            .hero-visual {
+                height: 360px;
+            }
+
+            .hero-facts {
+                gap: 24px;
+            }
+
+            .trust-strip {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 32px 20px;
+                gap: 16px;
+            }
+
+            section {
+                padding: 80px 20px;
+            }
+
+            .why-grid {
+                grid-template-columns: 1fr;
+                gap: 0;
+            }
+
+            .audience {
+                padding: 80px 20px;
+            }
+
+            .tab-bar {
+                overflow-x: auto;
+                overflow-y: hidden;
+                gap: 0;
+            }
+
+            .tab {
+                padding: 14px 18px;
+                white-space: nowrap;
+            }
+
+            .tab-panel.active {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .residence {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .residence-visual {
+                height: 360px;
+            }
+
+            .amenities-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 12px;
+            }
+
+            .amenities-grid .amenity:last-child {
+                grid-column: span 2;
+            }
+
+            .location {
+                padding: 80px 20px;
+            }
+
+            .location-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .final-cta {
+                padding: 80px 20px;
+            }
+
+            footer {
+                padding: 40px 20px 24px;
+            }
+
+            .footer-inner {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+
+            .footer-bottom-content {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 12px;
+            }
+
+            .compare-table th,
+            .compare-table td {
+                padding: 14px 12px;
+                font-size: 12px;
+            }
+
+            .compare-table th {
+                font-size: 14px;
+            }
+        }
+        .social-icon-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 32px;
+            height: 32px;
+            background-color: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            color: var(--gold-soft);
+            text-decoration: none;
+            transition: transform 0.2s, background-color 0.2s, color 0.2s;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .social-icon-btn:hover {
+            transform: translateY(-2px);
+            background-color: rgba(255, 255, 255, 0.1);
+            color: var(--ivory);
+            border-color: rgba(255, 255, 255, 0.15);
+        }
+
+        .social-icon-btn svg {
+            width: 16px;
+            height: 16px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAV -->
+    <nav>
+        <div class="nav-left">
+            <button class="menu-btn" aria-label="Menu" onclick="toggleMenu()">
+                <span class="iconify" data-icon="lucide:menu" data-width="24" data-height="24"></span>
+            </button>
+            <a href="#" class="logo">
+                <img src="Assets/Shreeyam_Logo_PNG.png" alt="Shreeyam Veda" class="nav-logo-img">
+            </a>
+        </div>
+        <div class="nav-links" id="navLinks">
+            <a href="#residence" onclick="toggleMenu()">The Residence</a>
+            <a href="#amenities" onclick="toggleMenu()">Amenities</a>
+            <a href="#location" onclick="toggleMenu()">Location</a>
+            <a href="#buyers" onclick="toggleMenu()">For Buyers</a>
+        </div>
+        <div class="nav-actions">
+            <a href="#contact" class="nav-cta">Book a Visit</a>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div>
+            <div class="hero-eyebrow">BEHIND BHARATHI COLONY &middot; COIMBATORE &middot; RERA TN/11/Layout/2051/2024/</div>
+            <h1 class="display">Fourteen villas. <em>One enclave.</em><br>Nothing more.</h1>
+            <p class="hero-sub">A boutique gated community in the quiet heart of Coimbatore, behind Bharathi Colony. 4
+                &amp; 5 BHK villas from 2,803 to 3,323 sqft, starting at ₹3.5 CR — designed for those who prefer
+                privacy over scale.</p>
+            <div class="hero-facts">
+                <div>
+                    <div class="fact-num display">14</div>
+                    <div class="fact-label">Limited Units</div>
+                </div>
+                <div>
+                    <div class="fact-num display">3,323</div>
+                    <div class="fact-label">Max sqft</div>
+                </div>
+                <div>
+                    <div class="fact-num display">4 &amp; 5</div>
+                    <div class="fact-label">BHK Configs</div>
+                </div>
+            </div>
+        </div>
+        <div class="hero-visual"></div>
+    </section>
+
+    <!-- TRUST STRIP -->
+    <div class="trust-strip">
+        <div class="trust-item">RERA Registered</div>
+        <div class="trust-item">Approved by Major Banks</div>
+        <div class="trust-item">100% Vastu Compliant</div>
+        <div class="trust-item">Plunge Pool</div>
+        <div class="trust-item">24/7 Security and CCTV Surveillance</div>
+    </div>
+
+    <!-- WHY VEDA -->
+    <section>
+        <div class="section-tag">Why Shreeyam Veda</div>
+        <h2 class="section-title display">Luxury is not a checklist of amenities.<br>It is the privilege of <em>not
+                sharing them.</em></h2>
+        <div class="why-grid">
+            <div class="why-card">
+                <div class="why-num">01 / BOUTIQUE SCALE</div>
+                <h3>Only 14 Limited Units</h3>
+                <p>Most "luxury" projects in Coimbatore have 40, 80, 200 units. We stopped at fourteen. The clubhouse is
+                    never crowded because there are only fourteen of you.</p>
+            </div>
+            <div class="why-card">
+                <div class="why-num">02 / CENTRALLY LOCATED</div>
+                <h3>Not an outskirt</h3>
+                <p>Five minutes to Avinashi Road. Ten to PSG Hospital and Ramakrishna Hospital. Three to Bharathi
+                    Colony. The city, already here — not a thirty-minute drive away.</p>
+            </div>
+            <div class="why-card">
+                <div class="why-num">03 / BUILT WITH CARE</div>
+                <h3>Personal, not corporate</h3>
+                <p>We are not a listed corporation with 95 projects. Every villa is walked, every
+                    specification checked. You will meet the people who built your home.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- AUDIENCE-SPECIFIC -->
+    <div class="audience" id="buyers">
+        <div class="audience-inner">
+            <div class="section-tag">A Home for</div>
+            <h2 class="section-title display">Different buyers.<br>One discreet community.</h2>
+
+            <div class="tab-bar">
+                <button class="tab active" data-panel="resident">Coimbatore Residents</button>
+                <button class="tab" data-panel="nri">NRI Buyers</button>
+                <button class="tab" data-panel="investor">Investors</button>
+            </div>
+
+            <!-- RESIDENT PANEL -->
+            <div class="tab-panel active" id="panel-resident">
+                <div class="panel-head">
+                    <h3>For families ready to upgrade — without leaving the city they love.</h3>
+                    <p>Most luxury in Coimbatore has moved to Kalapatti, Saravanampatti, Vilankurichi. Good projects —
+                        but far from the schools, hospitals, and Sunday lunches you actually care about. Shreeyam Veda
+                        stays central, behind Bharathi Colony, so your life doesn't have to relocate.</p>
+                </div>
+                <ul class="panel-benefits">
+                    <li><span class="benefit-marker display">I.</span>
+                        <div><strong>Minutes from what matters</strong><span>PSG &amp; Ramakrishna Hospitals, top
+                                schools, Airport and Race Course.</span></div>
+                    </li>
+                    <li><span class="benefit-marker display">II.</span>
+                        <div><strong>Vastu-compliant, zero dead space</strong><span>Designs refined with a vastu
+                                consultant before finalisation — north and east-facing options available.</span></div>
+                    </li>
+                    <li><span class="benefit-marker display">III.</span>
+                        <div><strong>Home loan, pre-approved</strong><span>HDFC, IDFC, SBI and more. Walk in
+                                with documents, walk out with sanction.</span></div>
+                    </li>
+
+                </ul>
+            </div>
+
+            <!-- NRI PANEL -->
+            <div class="tab-panel" id="panel-nri">
+                <div class="panel-head">
+                    <h3>A home in India, managed without the time zone headache.</h3>
+                    <p>You're in Dubai. In San Jose. In Singapore. You want a home in Coimbatore — for your parents, for
+                        retirement, for when you finally come back. We handle everything: virtual tours in your time
+                        zone, documentation by courier, registration by POA, and rental management once possession is
+                        handed over.</p>
+                </div>
+                <ul class="panel-benefits">
+                    <li><span class="benefit-marker display">I.</span>
+                        <div><strong>Zoom walkthroughs, your time zone</strong><span>Evening IST, morning PST, or
+                                weekend GST — we schedule the tour for when you're free.</span></div>
+                    </li>
+                    <li><span class="benefit-marker display">II.</span>
+                        <div><strong>Documentation by courier</strong><span>Notarised,
+                                registered via Power of Attorney. No India trip required.</span></div>
+                    </li>
+                    <li><span class="benefit-marker display">III.</span>
+                        <div><strong>Post-possession rental management</strong><span>Tenant screening, rent collection,
+                                maintenance — tax receipts filed in your name.</span></div>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- INVESTOR PANEL -->
+            <div class="tab-panel" id="panel-investor">
+                <div class="panel-head">
+                    <h3>Scarcity is not a marketing angle. Fourteen villas is the scarcity.</h3>
+                    <p>Central Coimbatore land is finished. Everything new is thirty minutes outside. Shreeyam Veda is
+                        one of the last boutique villa enclaves being delivered inside city limits — on land behind
+                        Bharathi Colony that will not be replicated. For capital appreciation plays, location scarcity
+                        matters more than amenity lists.</p>
+                </div>
+                <ul class="panel-benefits">
+                    <li><span class="benefit-marker display">I.</span>
+                        <div><strong>Central CBE land — no new supply</strong><span>Avarampalayam has &lt;110 active
+                                listings. Most new villa stock is 10+ km from city centre.</span></div>
+                    </li>
+                    <li><span class="benefit-marker display">II.</span>
+                        <div><strong>Expected rental yield</strong><span>Premium-furnished 4 &amp; 5 BHK villas near
+                                PSG fetch ₹80k–1.1L / month — strong for this segment.</span></div>
+                    </li>
+                    <li><span class="benefit-marker display">III.</span>
+                        <div><strong>Investor pack on request</strong><span>Historical Avarampalayam appreciation,
+                                rental comps, RERA docs, and clear-title legal brief.</span></div>
+                    </li>
+                    <li><span class="benefit-marker display">IV.</span>
+                        <div><strong>Flexible payment milestones</strong><span>Construction-linked or deferred options
+                                available for repeat-investor profiles.</span></div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- THE RESIDENCE -->
+    <section id="residence">
+        <div class="section-tag">The Residence</div>
+        <h2 class="section-title display">Spacious, honest<br>and built to last.</h2>
+        <div class="residence">
+            <div class="residence-visual"></div>
+            <div>
+                <table class="spec-table">
+                    <tr>
+                        <td>Configuration</td>
+                        <td>4 &amp; 5 BHK</td>
+                    </tr>
+                    <tr>
+                        <td>Built-Up Area</td>
+                        <td>2,803 – 3,323 sqft</td>
+                    </tr>
+                    <tr>
+                        <td>Total Units</td>
+                        <td>14</td>
+                    </tr>
+                    <tr>
+                        <td>Parking</td>
+                        <td>2 covered per villa</td>
+                    </tr>
+                    <tr>
+                        <td>Structure</td>
+                        <td>G + 2 RCC frame</td>
+                    </tr>
+                    <tr>
+                        <td>Facing</td>
+                        <td>North, East options</td>
+                    </tr>
+                    <tr>
+                        <td>Possession</td>
+                        <td>June 2027</td>
+                    </tr>
+                    <tr>
+                        <td>RERA No.</td>
+                        <td>TN/11/Layout/2051/2024/</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- AMENITIES -->
+    <section id="amenities">
+        <div class="section-tag">The Enclave</div>
+        <h2 class="section-title display">Everything you need.<br>Shared with only thirteen others.</h2>
+        <div class="amenities-grid">
+            <div class="amenity">
+                <div class="amenity-icon">
+                    <span class="iconify" data-icon="mdi:swim" data-width="54" data-height="54"></span>
+                </div>
+                <div class="amenity-name">Plunge Pool</div>
+                <div class="amenity-desc">Private within community</div>
+            </div>
+            <div class="amenity">
+                <div class="amenity-icon">
+                    <span class="iconify" data-icon="mdi:office-building-outline" data-width="54" data-height="54"></span>
+                </div>
+                <div class="amenity-name">Community Hall</div>
+                <div class="amenity-desc">Private functions</div>
+            </div>
+            <div class="amenity">
+                <div class="amenity-icon">
+                    <span class="iconify" data-icon="mdi:dumbbell" data-width="54" data-height="54"></span>
+                </div>
+                <div class="amenity-name">Gymnasium</div>
+                <div class="amenity-desc">Fully-equipped</div>
+            </div>
+            <div class="amenity">
+                <div class="amenity-icon">
+                    <span class="iconify" data-icon="mdi:seesaw" data-width="54" data-height="54"></span>
+                </div>
+                <div class="amenity-name">Kid's Play Area</div>
+                <div class="amenity-desc">Soft surface, indoor play area</div>
+            </div>
+            <div class="amenity">
+                <div class="amenity-icon">
+                    <span class="iconify" data-icon="mdi:cctv" data-width="54" data-height="54"></span>
+                </div>
+                <div class="amenity-name">24/7 Surveillance</div>
+                <div class="amenity-desc">CCTV + access control</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- LOCATION -->
+    <div class="location" id="location">
+        <div class="location-inner">
+            <div class="section-tag">The Location</div>
+            <h2 class="section-title display">Behind Bharathi Colony.<br>Ahead of everything else.</h2>
+            <div class="location-grid">
+                <div class="map-placeholder">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3916.126914683575!2d76.9890161!3d11.029103500000002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba859004a00706b%3A0xdd4f8f949df2f724!2sShreeyam%20Veda!5e0!3m2!1sen!2sin!4v1780381248464!5m2!1sen!2sin" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+                <ul class="poi-list">
+                    <li><span class="poi-name">Bharathi Colony</span><span class="poi-dist">3 min</span></li>
+                    <li><span class="poi-name">Avinashi Road</span><span class="poi-dist">5 min</span></li>
+                    <li><span class="poi-name">Sathy Road</span><span class="poi-dist">5 min</span></li>
+                    <li><span class="poi-name">Ramakrishna Hospital</span><span class="poi-dist">8 min</span></li>
+                    <li><span class="poi-name">PSG Hospital</span><span class="poi-dist">10 min</span></li>
+                    <li><span class="poi-name">PSG Tech / Peelamedu</span><span class="poi-dist">10 min</span></li>
+                    <li><span class="poi-name">Fun Republic Mall</span><span class="poi-dist">12 min</span></li>
+                    <li><span class="poi-name">CBE International Airport</span><span class="poi-dist">18 min</span></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- COMPARISON -->
+    <section>
+        <div class="section-tag">The Difference</div>
+        <h2 class="section-title display">A boutique villa<br>is not a large project in miniature.</h2>
+        <div style="overflow-x: auto;">
+            <table class="compare-table">
+                <thead>
+                    <tr>
+                        <th>&nbsp;</th>
+                        <th>Shreeyam Veda</th>
+                        <th>Typical Luxury Project in CBE</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="us">
+                        <td>Total Units</td>
+                        <td>14 villas</td>
+                        <td>40 – 200+ units</td>
+                    </tr>
+                    <tr>
+                        <td>Location</td>
+                        <td>Central CBE, behind Bharathi Colony</td>
+                        <td>Usually Kalapatti, Saravanampatti, Vilankurichi</td>
+                    </tr>
+                    <tr class="us">
+                        <td>Community Feel</td>
+                        <td>Know every neighbour</td>
+                        <td>Anonymous</td>
+                    </tr>
+                    <tr>
+                        <td>Product Type</td>
+                        <td>Villa-only enclave</td>
+                        <td>Mixed apartments + villas</td>
+                    </tr>
+                    <tr class="us">
+                        <td>Buyer Interaction</td>
+                        <td>Direct with partners</td>
+                        <td>Sales team layers</td>
+                    </tr>
+                    <tr>
+                        <td>Amenity Load</td>
+                        <td>Focused essentials, well-maintained</td>
+                        <td>50+ amenities, half unused</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section>
+        <div class="section-tag">Frequently Asked</div>
+        <h2 class="section-title display">Answers you'd want<br>before picking up the phone.</h2>
+        <div class="faq">
+            <div class="faq-item">
+                <div class="faq-q">What is the starting price?</div>
+                <div class="faq-a">Villas at Shreeyam Veda starts from ₹3.5 Cr. Exact unit-wise pricing is shared on WhatsApp when you request the brochure — this lets
+                    us share live availability as only 14 units exist.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-q">Is the project RERA-approved?</div>
+                <div class="faq-a">Yes. RERA Registration Number: TN/11/Layout/2051/2024/. You can verify this on the official Tamil
+                    Nadu RERA portal at rera.tn.gov.in.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-q">What is the possession timeline?</div>
+                <div class="faq-a">Target possession: June 2027. Construction milestones are shared monthly with
+                    booked buyers via WhatsApp. Delay-compensation clauses are part of the sale agreement as per RERA
+                    norms.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-q">Which banks have approved home loans?</div>
+                <div class="faq-a">HDFC, IDFC, SBI and more have pre-approved the project. Up to 80%
+                    loan-to-value for salaried buyers, subject to eligibility. We introduce you directly to the branch —
+                    no external agents.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-q">Can NRIs buy? What is the process?</div>
+                <div class="faq-a">Yes. Process is fully remote.</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FINAL CTA -->
+    <div class="final-cta" id="contact">
+        <div class="display">The brochure,<br><em>in your inbox in 30 seconds.</em></div>
+        <p>Floor plans, unit-wise pricing, walkthrough video and RERA documents — delivered on WhatsApp within half a
+            minute of your enquiry.</p>
+        <form class="lead-form" id="leadForm">
+            <input type="text" id="leadName" placeholder="Your name" required>
+            <input type="tel" id="leadPhone" placeholder="Mobile number (for WhatsApp)" required>
+            <input type="email" id="leadEmail" placeholder="Email (optional)">
+            <button type="submit" id="leadSubmitBtn">Send Me the Brochure →</button>
+        </form>
+        <div class="form-note">By submitting, you consent to receive project details via WhatsApp &amp; email. We never
+            share your number.</div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-inner">
+            <div>
+                <img src="Assets/Shreeyam_Logo_PNG.png" alt="Shreeyam Property Developers" style="height: 40px; margin-bottom: 16px; display: block;">
+                <p>A Shreeyam Property Developers project.<br>2nd Floor, The Grand Hub,<br>Avinashi Road, Peelamedu,<br>Coimbatore - 641004.</p>
+                <div class="social-icons" style="display: flex; gap: 16px; margin-top: 20px;">
+                    <a href="https://www.facebook.com/share/1bw7Pjn1B4/" class="social-icon-btn" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
+                        <span class="iconify" data-icon="lucide:facebook"></span>
+                    </a>
+                    <a href="https://www.instagram.com/shreeyampropertydevelopers?igsh=MTY3c3F4eTR5cGVuMQ==" class="social-icon-btn" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+                        <span class="iconify" data-icon="lucide:instagram"></span>
+                    </a>
+                    <a href="https://www.linkedin.com/company/shreeyam-property-developers/" class="social-icon-btn" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
+                        <span class="iconify" data-icon="lucide:linkedin"></span>
+                    </a>
+                    <a href="https://youtube.com/@shreeyampropertydevelopers?si=TsHO5gvJ9v53_Ese" class="social-icon-btn" aria-label="YouTube" target="_blank" rel="noopener noreferrer">
+                        <span class="iconify" data-icon="lucide:youtube"></span>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Project</h4>
+                <a href="#residence">The Residence</a>
+                <a href="#amenities">Amenities</a>
+                <a href="#location">Location</a>
+                <a href="#contact">Request Brochure</a>
+            </div>
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <a href="tel:+919384090794">+91 93840 90794</a>
+                <a href="tel:+919384090797">+91 93840 90797</a>
+                <a href="mailto:info@shreeyamproperties.com">info@shreeyamproperties.com</a>
+                <a href="https://wa.me/919384090794">WhatsApp us</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="footer-bottom-content">
+                <span>© 2026 Shreeyam Property Developers</span>
+                <span><a href="https://www.shreeyamdevelopers.com/privacy-policy/" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none;">Privacy Policy</a> | <a href="https://www.shreeyamdevelopers.com/terms-conditions/" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none;">Terms and Conditions</a></span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- FLOATING BUTTONS -->
+    <div class="floating-buttons">
+        <a href="tel:+919384090794" class="float-btn phone" aria-label="Call Us">
+            <svg viewBox="0 0 24 24"><path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56a.977.977 0 00-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 1.01-.63 1.01-1.18v-3.45c0-.54-.45-.99-.99-.99z"/></svg>
+        </a>
+        <a href="https://wa.me/919384090794?text=Hi%20Shreeyam%20Veda%2C%20I%20would%20like%20the%20brochure." class="float-btn whatsapp" aria-label="WhatsApp Us">
+            <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 00-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        </a>
+    </div>
+
+    <script>
+        // Tabs
+        document.querySelectorAll('.tab').forEach(t => {
+            t.addEventListener('click', () => {
+                document.querySelectorAll('.tab').forEach(x => x.classList.remove('active'));
+                document.querySelectorAll('.tab-panel').forEach(x => x.classList.remove('active'));
+                t.classList.add('active');
+                document.getElementById('panel-' + t.dataset.panel).classList.add('active');
+            });
+        });
+
+        // FAQ
+        document.querySelectorAll('.faq-q').forEach(q => {
+            q.addEventListener('click', () => {
+                q.parentElement.classList.toggle('open');
+            });
+        });
+
+        // Form Submission
+        const leadForm = document.getElementById('leadForm');
+        if (leadForm) {
+            leadForm.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                const name = document.getElementById('leadName').value;
+                const phone = document.getElementById('leadPhone').value;
+                const email = document.getElementById('leadEmail').value;
+                const submitBtn = document.getElementById('leadSubmitBtn');
+
+                const originalBtnText = submitBtn.innerText;
+                submitBtn.innerText = 'Sending...';
+                submitBtn.disabled = true;
+
+                try {
+                    const response = await fetch('/api/leads', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({ name, phone, email })
+                    });
+
+                    if (response.ok) {
+                        alert('Thank you! Your submission has been saved.');
+                        leadForm.reset();
+                    } else {
+                        alert('Oops! Something went wrong. Please try again.');
+                    }
+                } catch (error) {
+                    console.error('Error submitting form:', error);
+                    alert('Error connecting to the server.');
+                } finally {
+                    submitBtn.innerText = originalBtnText;
+                    submitBtn.disabled = false;
+                }
+            });
+        }
+
+        function toggleMenu() {
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.toggle('active');
+        }
+    </script>
+</body>
+
+</html>
