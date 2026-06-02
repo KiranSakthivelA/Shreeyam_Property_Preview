@@ -95,7 +95,11 @@ app.post('/api/leads', async (req, res) => {
     res.status(201).json({ message: 'Submission saved successfully!', id: insertId });
 });
 
-// Start the server
-app.listen(PORT, () => {
-    console.log(`Server is running on http://localhost:${PORT}`);
-});
+// Start the server only if not running in a serverless environment (like Vercel)
+if (require.main === module) {
+    app.listen(PORT, () => {
+        console.log(`Server is running on http://localhost:${PORT}`);
+    });
+}
+
+module.exports = app;
