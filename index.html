@@ -1717,6 +1717,8 @@
                     form.reset();
                     if (form.id === 'popupForm') {
                         setTimeout(() => closePopup(), 2000);
+                    } else {
+                        setTimeout(() => { submitBtn.innerText = originalBtnText; }, 4000);
                     }
                 } else {
                     alert('Oops! Something went wrong. Please try again.');
