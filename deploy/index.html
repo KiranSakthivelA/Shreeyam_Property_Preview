@@ -121,7 +121,7 @@
         .nav-left {
             display: flex;
             align-items: center;
-            gap: 6px;
+            gap: 16px;
         }
 
         .nav-actions {
@@ -232,7 +232,6 @@
             display: flex;
             align-items: center;
             gap: 10px;
-            font-weight: 600;
         }
 
         .trust-item::before {
@@ -249,7 +248,7 @@
         }
 
         .section-tag {
-            font-size: 15px;
+            font-size: 11px;
             letter-spacing: 0.3em;
             text-transform: uppercase;
             color: var(--gold);
@@ -257,7 +256,6 @@
             display: flex;
             align-items: center;
             gap: 14px;
-            font-weight: 600;
         }
 
         .section-tag::before {
@@ -289,12 +287,10 @@
         }
 
         .why-num {
-            font-family: 'Inter', sans-serif;
-            font-size: 15px;
-            font-weight: 600;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 14px;
             color: var(--gold);
-            letter-spacing: 0.3em;
-            text-transform: uppercase;
+            letter-spacing: 0.2em;
             margin-bottom: 24px;
         }
 
@@ -1227,7 +1223,7 @@
                 <span class="iconify" data-icon="lucide:menu" data-width="24" data-height="24"></span>
             </button>
             <a href="#home" class="logo">
-                <img src="Assets/Shreeyam_Logo_Header_PNG.png" alt="Shreeyam Veda" class="nav-logo-img">
+                <img src="Assets/Shreeyam_Logo_PNG.png" alt="Shreeyam Veda" class="nav-logo-img">
             </a>
         </div>
         <div class="nav-links" id="navLinks">
@@ -1237,17 +1233,14 @@
             <a href="#buyers" onclick="toggleMenu()">For Buyers</a>
         </div>
         <div class="nav-actions">
-            <a href="tel:+919384090794" class="nav-cta" style="display:flex;align-items:center;gap:8px;">
-                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56a.977.977 0 00-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 1.01-.63 1.01-1.18v-3.45c0-.54-.45-.99-.99-.99z"/></svg>
-                +91 93840 90794
-            </a>
+            <a href="#contact" class="nav-cta">Book a Visit</a>
         </div>
     </nav>
 
     <!-- HERO -->
     <section class="hero">
         <div>
-            <div class="hero-eyebrow">BEHIND BHARATHI COLONY &middot; COIMBATORE</div>
+            <div class="hero-eyebrow">BEHIND BHARATHI COLONY &middot; COIMBATORE &middot; RERA TN/11/Layout/2051/2024/</div>
             <h1 class="display">Fourteen villas. <em>One enclave.</em><br>Nothing more.</h1>
             <p class="hero-sub">A boutique gated community in the quiet heart of Coimbatore, behind Bharathi Colony. 4
                 &amp; 5 BHK villas from 2,803 to 3,323 sqft, starting at ₹3.5 CR — designed for those who prefer
@@ -1336,7 +1329,7 @@
                                 consultant before finalisation — north and east-facing options available.</span></div>
                     </li>
                     <li><span class="benefit-marker display">III.</span>
-                        <div><strong>Home loan, pre-approved</strong><span>HDFC, LIC, SBI and more. Walk in
+                        <div><strong>Home loan, pre-approved</strong><span>HDFC, IDFC, SBI and more. Walk in
                                 with documents, walk out with sanction.</span></div>
                     </li>
 
@@ -1582,7 +1575,7 @@
             </div>
             <div class="faq-item">
                 <div class="faq-q">Which banks have approved home loans?</div>
-                <div class="faq-a">HDFC, LIC, SBI and more have pre-approved the project. Up to 80%
+                <div class="faq-a">HDFC, IDFC, SBI and more have pre-approved the project. Up to 80%
                     loan-to-value for salaried buyers, subject to eligibility. We introduce you directly to the branch —
                     no external agents.</div>
             </div>
@@ -1612,7 +1605,7 @@
     <footer>
         <div class="footer-inner">
             <div>
-                <img src="Assets/Shreeyam_Logo_Footer_PNG.png" alt="Shreeyam Property Developers" style="height: 40px; margin-bottom: 16px; display: block;">
+                <img src="Assets/Shreeyam_Logo_PNG.png" alt="Shreeyam Property Developers" style="height: 40px; margin-bottom: 16px; display: block;">
                 <p>A Shreeyam Property Developers project.<br>2nd Floor, The Grand Hub,<br>Avinashi Road, Peelamedu,<br>Coimbatore - 641004.</p>
                 <div class="social-icons" style="display: flex; gap: 16px; margin-top: 20px;">
                     <a href="https://www.facebook.com/share/1bw7Pjn1B4/" class="social-icon-btn" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
@@ -1724,8 +1717,6 @@
                     form.reset();
                     if (form.id === 'popupForm') {
                         setTimeout(() => closePopup(), 2000);
-                    } else {
-                        setTimeout(() => { submitBtn.innerText = originalBtnText; }, 4000);
                     }
                 } else {
                     alert('Oops! Something went wrong. Please try again.');
