@@ -63,14 +63,13 @@ try {
 
     // Mandatory fields: clientFirstName, phoneNumber, leadSource
     // All optional fields use "" (empty string) per API spec
-    $payload = json_encode([
+    $payloadData = [
         "projectName"          => "Veda",
         "clientNamePrefix"     => "Mr",
         "clientFirstName"      => $name,      // MANDATORY
         "clientLastName"       => "",
         "phoneNumber"          => $phone,     // MANDATORY
         "alternatePhoneNumber" => "",
-        "email"                => $email,
         "leadSource"           => "Website",  // MANDATORY
         "campaignSource"       => "",
         "clientStreet"         => "",
@@ -87,7 +86,13 @@ try {
         "clientBudgetType"     => "",
         "description"          => "",
         "intrestedProjects"    => []
-    ]);
+    ];
+
+    if (!empty($email)) {
+        $payloadData["email"] = $email;
+    }
+
+    $payload = json_encode($payloadData);
 
     $ch = curl_init(SYNCIN_API_URL);
 
