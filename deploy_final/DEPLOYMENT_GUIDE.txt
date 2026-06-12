@@ -1,0 +1,59 @@
+﻿========================================================
+  SHREEYAM VEDA — DEPLOYMENT GUIDE
+========================================================
+
+FOLDER STRUCTURE
+----------------
+  index.html          → Upload to public_html (root)
+  api/
+    config.php        → Update DB credentials here
+    leads.php         → Lead capture API (MySQLi)
+  Assets/             → Upload as-is (images/logos)
+  database/
+    shreeyam_veda_table_only.sql → Import in phpMyAdmin
+
+STEP-BY-STEP DEPLOYMENT
+------------------------
+
+STEP 1 — Create Database (cPanel)
+  1. Login to cPanel
+  2. Go to "MySQL Databases"
+  3. Create Database  : shreeyam_veda
+  4. Create DB User   : set a strong password
+  5. Add User to DB   : grant "All Privileges"
+  6. Note down: DB Host, DB Name, DB User, DB Password
+
+STEP 2 — Import Database (phpMyAdmin)
+  1. Open phpMyAdmin
+  2. Click your database name in the LEFT sidebar
+  3. Click "Import" tab
+  4. Choose file: database/shreeyam_veda_table_only.sql
+  5. Click "Go"
+  ✅ The submissions table will be created.
+
+STEP 3 — Update Config File
+  Open api/config.php and update these 4 lines:
+    define('DB_HOST', 'localhost');       ← usually localhost
+    define('DB_USER', 'your_db_user');    ← from cPanel
+    define('DB_PASS', 'your_db_pass');    ← from cPanel
+    define('DB_NAME', 'your_db_name');    ← from cPanel
+  Note: cPanel prefixes DB names, e.g. cpuser_shreeyam_veda
+
+STEP 4 — Upload Files
+  Upload everything EXCEPT the database/ folder to public_html:
+    public_html/
+      index.html
+      api/
+        config.php
+        leads.php
+      Assets/
+        (all image files)
+
+STEP 5 — Test
+  Open the website and submit a lead form.
+  Check phpMyAdmin > submissions table for the new record.
+
+========================================================
+  DO NOT upload the database/ folder to public_html.
+  It is for your reference only.
+========================================================

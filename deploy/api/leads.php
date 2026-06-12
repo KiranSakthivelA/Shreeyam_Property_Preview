@@ -39,17 +39,19 @@ $insertId = null;
 
 // 1. Save to MySQL Database (optional - silently fails if not configured)
 try {
-    $dsn  = "mysql:host=" . DB_HOST . ";dbname=" . DB_NAME . ";charset=utf8mb4";
-    $opts = [
-        PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
-        PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
-        PDO::ATTR_EMULATE_PREPARES   => false,
-    ];
-    $pdo  = new PDO($dsn, DB_USER, DB_PASS, $opts);
-    $sql  = "INSERT INTO submissions (name, phone, email) VALUES (:name, :phone, :email)";
-    $stmt = $pdo->prepare($sql);
-    $stmt->execute(['name' => $name, 'phone' => $phone, 'email' => $email]);
-    $insertId = $pdo->lastInsertId();
+    mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
+    $conn = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
+    $conn->set_charset("utf8mb4");
+
+    $sql  = "INSERT INTO submissions (name, phone, email) VALUES (?, ?, ?)";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("sss", $name, $phone, $email);
+    $stmt->execute();
+
+    $insertId = $conn->insert_id;
+
+    $stmt->close();
+    $conn->close();
 } catch (Exception $e) {
     error_log("Database Error: " . $e->getMessage());
     // DB failure is non-fatal — continue to CRM push
@@ -112,7 +114,7 @@ try {
     $result   = curl_exec($ch);
     $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
     $curlErr  = curl_error($ch);
-    curl_close($ch);
+    // curl_close($ch); // Deprecated since PHP 8.0, effect removed in 8.5
 
     if ($curlErr) {
         error_log("cURL Error pushing to Syncin CRM: " . $curlErr);
