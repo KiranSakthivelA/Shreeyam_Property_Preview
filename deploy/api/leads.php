@@ -63,33 +63,15 @@ try {
         throw new Exception("cURL is not available on this server.");
     }
 
-    // Mandatory fields: clientFirstName, phoneNumber, leadSource
-    // All optional fields use "" (empty string) per API spec
+    // CRM payload — matched to deployment team's confirmed structure (landingpage.php)
     $payloadData = [
-        "projectName"          => "Veda",
-        "clientNamePrefix"     => "Mr",
-        "clientFirstName"      => $name,      // MANDATORY
-        "clientLastName"       => "",
-        "phoneNumber"          => $phone,     // MANDATORY
-        "alternatePhoneNumber" => "",
-        "leadSource"           => "Website",  // MANDATORY
-        "campaignSource"       => "",
-        "clientStreet"         => "",
-        "clientCountry"        => "",
-        "clientCity"           => "",
-        "clientZipCode"        => "",
-        "clientState"          => "",
-        "leadStage"            => "",
-        "propertyType"         => "",
-        "location"             => "",
-        "area"                 => "",
-        "clientPreference"     => "",
-        "clientBudgetValue"    => 0,
-        "clientBudgetType"     => "",
-        "description"          => "",
-        "intrestedProjects"    => []
+        "clientFirstName" => $name,      // MANDATORY
+        "phoneNumber"     => $phone,     // MANDATORY
+        "leadSource"      => "Website",  // MANDATORY
+        "description"     => "Enquiry from Shreeyam Veda landing page"
     ];
 
+    // Only include email if provided — empty string causes CRM to reject the request
     if (!empty($email)) {
         $payloadData["email"] = $email;
     }
