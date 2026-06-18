@@ -21,19 +21,24 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     exit();
 }
 
-// Get JSON POST body
-$data = json_decode(file_get_contents("php://input"));
+// Support both JSON and URL-encoded POST data
+$contentType = isset($_SERVER["CONTENT_TYPE"]) ? trim($_SERVER["CONTENT_TYPE"]) : '';
+if (strpos($contentType, 'application/json') !== false) {
+    $data = json_decode(file_get_contents("php://input"), true);
+} else {
+    $data = $_POST;
+}
 
 // Validate mandatory fields
-if (!isset($data->name) || empty(trim($data->name)) || !isset($data->phone) || empty(trim($data->phone))) {
+if (empty($data['name']) || empty($data['phone'])) {
     http_response_code(400);
     echo json_encode(["error" => "Name and phone are required."]);
     exit();
 }
 
-$name  = htmlspecialchars(strip_tags(trim($data->name)));
-$phone = htmlspecialchars(strip_tags(trim($data->phone)));
-$email = isset($data->email) ? htmlspecialchars(strip_tags(trim($data->email))) : '';
+$name  = htmlspecialchars(strip_tags(trim($data['name'])));
+$phone = htmlspecialchars(strip_tags(trim($data['phone'])));
+$email = !empty($data['email']) ? htmlspecialchars(strip_tags(trim($data['email']))) : '';
 
 $insertId = null;
 
@@ -63,18 +68,15 @@ try {
         throw new Exception("cURL is not available on this server.");
     }
 
-    // CRM payload — matched to deployment team's confirmed structure (landingpage.php)
+    // CRM payload — strictly follows the API PDF provided
     $payloadData = [
-        "clientFirstName" => $name,      // MANDATORY
-        "phoneNumber"     => $phone,     // MANDATORY
-        "leadSource"      => "Website",  // MANDATORY
+        "projectName"     => "Veda",     // Mandated by the PDF documentation
+        "clientFirstName" => $name,      
+        "phoneNumber"     => $phone,     
+        "email"           => $email,     // Always pass, even if empty
+        "leadSource"      => "Website",  
         "description"     => "Enquiry from Shreeyam Veda landing page"
     ];
-
-    // Only include email if provided — empty string causes CRM to reject the request
-    if (!empty($email)) {
-        $payloadData["email"] = $email;
-    }
 
     $payload = json_encode($payloadData);
 
@@ -89,9 +91,6 @@ try {
         'Content-Length: ' . strlen($payload)
     ]);
     curl_setopt($ch, CURLOPT_TIMEOUT,        15);
-    // SSL options for compatibility with shared/free hosting
-    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
-    curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);
 
     $result   = curl_exec($ch);
     $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
